@@ -1,5 +1,6 @@
 ﻿using lifedashboard.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using System.Diagnostics;
 
 namespace lifedashboard.Controllers
@@ -7,6 +8,7 @@ namespace lifedashboard.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -17,6 +19,11 @@ namespace lifedashboard.Controllers
         {
             return View();
         }
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
+
         public IActionResult Attendance()
         {
             return View();

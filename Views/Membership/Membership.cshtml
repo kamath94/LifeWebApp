@@ -1,34 +1,35 @@
-﻿@{
+﻿@model MembeDetails
+@{
     ViewData["Title"] = "Registration Page";
 }
 <h1>@ViewData["Title"]</h1>
-<form>
+<form class="container-fluid" method="post">
     <fieldset>
                     
         <div class="form-group">
             <label class="form-label mt-4">Name</label>
-            <input type="text" class="form-control" id="InputName" placeholder="Enter Name">
+            <input type="text" class="form-control" id="InputName" placeholder="Enter Name" asp-for="Name">
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Age</label>
-            <input type="number" class="form-control" id="InputAge" placeholder="Enter Age">
+            <input type="number" class="form-control" id="InputAge" placeholder="Enter Age" asp-for="Age">
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Date Of Birth</label>
-            <input type="date" class="form-control" id="InputDateOfBirth" />
+            <input type="date" class="form-control" id="InputDateOfBirth" asp-for="Dob"/>
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Father's Name</label>
-            <input type="text" class="form-control" id="InputFatherName" >
+            <input type="text" class="form-control" id="InputFatherName" asp-for="FatherName"/>
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Full Address</label>
-            <input type="text" class="form-control" id="InputFullAddress" >
+            <input type="text" class="form-control" id="InputFullAddress"asp-for="FullAddress"/>
         </div>
        
         <div class="form-group">
             <label  class="form-label mt-4">Blood Group</label>
-            <select class="form-select" id="BloodGroup">
+            <select class="form-select" id="BloodGroup" asp-for="Bloodgrp">
                 <option >Select a value </option>
                 <option value="A positive">A positive (A+)</option>
                 <option value="A negative">A negative (A-)</option>
@@ -42,28 +43,28 @@
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Phone Number </label>
-            <input type="text" class="form-control" id="InputPhone">
+            <input type="text" class="form-control" id="InputPhone" asp-for="Phone"/>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" asp-for="Email">
           </div>
         <div class="form-group">
             <label class="form-label mt-4">Emergency Phone Number </label>
-            <input type="text" class="form-control" id="InputEmergencyPhone">
+            <input type="text" class="form-control" id="InputEmergencyPhone"asp-for="EmergencyNumber"/>
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Relation</label>
-            <input type="text" class="form-control" id="InputRelation">
+            <input type="text" class="form-control" id="InputRelation"asp-for="Relation"/>
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Date Of Joining</label>
-            <input type="date" class="form-control" id="InputDateOfBirth" />
+            <input type="date" class="form-control" id="InputDateOfBirth" asp-for="JoiningDate"/>
         </div>
         
         <div class="form-group">
             <label class="form-label mt-4">Marital Status</label>
-            <select class="form-select" id="MaritalStatus">
+            <select class="form-select" id="MaritalStatus" asp-for="MaritalStatus ">
                 <option>Select a value </option>
                 <option value="Married">Married</option>
                 <option value="Single">Single</option>
@@ -73,7 +74,7 @@
         </div>
             <div class="form-group">
                 <label class="form-label mt-4">Gender</label>
-                <select class="form-select" id="MaritalStatus">
+                <select class="form-select" id="Gender" asp-for="Gender">
                     <option>Select a value </option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -82,25 +83,25 @@
         </div>
                 <div class="form-group">
                     <label class="form-label mt-4">Height</label>
-                    <input type="text" class="form-control" id="InputHeight" >
+                    <input type="text" class="form-control" id="InputHeight" asp-for="Height"/>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label mt-4">Weight</label>
-                    <input type="text" class="form-control" id="InputWeight">
+                    <input type="text" class="form-control" id="InputWeight"asp-for="Weight"/>
                 </div>
                 <div class="form-group">
                     <label class="form-label mt-4">Timing</label>
-                    <input type="text" class="form-control" id="InputTiming">
+                    <input type="text" class="form-control" id="InputTiming"asp-for="Timing"/>
                 </div>
                 <div class="form-group">
                     <label class="form-label mt-4">Qualification</label>
-                    <input type="text" class="form-control" id="InputQualification">
+                    <input type="text" class="form-control" id="InputQualification"asp-for="Qualification"/>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label mt-4">Job</label>
-                    <input type="text" class="form-control" id="Inputjob">
+                    <input type="text" class="form-control" id="Inputjob"asp-for="Job"/>
                 </div>
 
         <div class ="form-label mt-4">
