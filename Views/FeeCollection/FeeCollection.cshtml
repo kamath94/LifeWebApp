@@ -4,10 +4,10 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form class="container-fluid" method="post">
+<form class="container-fluid" method="post" asp-validation-summary="ModelOnly">
     <div class="form-group">
         <label class="form-label mt-4">Phone Number </label>
-        <input type="text" class="form-control" id="InputPhone" asp-for="Phone" />
+        <input type="text" class="form-control" id="InputPhone" asp-for="Phone" asp-validation-for="Phone" />
     </div>
     <div class="form-group">
         <label class="form-label mt-4">Fee Type</label>
@@ -16,11 +16,12 @@
         <option value="Monthly">Monthly</option>
         <option value="Admission">Admission</option>
         <option value="Other">Other</option>
-      
+      </select>
     </div>
+
     <div class="form-group">
         <label class="form-label mt-4">Fee Amount </label>
-        <input type="text" class="form-control" id="FeeAmount" asp-for="FeeAmount" />
+        <input type="number" class="form-control" id="FeeAmount" asp-for="FeeAmount" />
     </div>
     <div class="form-group">
         <label class="form-label mt-4">Date Of Payment</label>

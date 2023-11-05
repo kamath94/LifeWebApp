@@ -19,25 +19,7 @@ namespace lifedashboard.Controllers
         {
             return View();
         }
-        public IActionResult Dashboard()
-        {
-            return View();
-        }
-
-        public IActionResult Attendance()
-        {
-            return View();
-        }
-
-        public IActionResult FeeCollection()
-        {
-            return View();
-        }
-
-        public IActionResult MemberDetails()
-        {
-            return View();
-        }
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

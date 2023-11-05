@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using lifedashboard.Data;
 
@@ -11,9 +12,11 @@ using lifedashboard.Data;
 namespace lifedashboard.Migrations
 {
     [DbContext(typeof(DBConfig))]
-    partial class DBConfigModelSnapshot : ModelSnapshot
+    [Migration("20231104135406_updatd feeamount data type")]
+    partial class updatdfeeamountdatatype
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

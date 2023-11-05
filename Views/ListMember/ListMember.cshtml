@@ -1,0 +1,36 @@
+﻿@model List<MembeDetails>
+@{
+    ViewData["Title"] = "Member List";
+}
+<h1>@ViewData["Title"]</h1>
+<table class="table table-hover">
+<thead>
+<tr>
+    <th scope="col">Member Id</th>
+    <td >Member Name</td>
+    <td >Phone Number</td>
+    <td >Timing</td>
+     <td></td>
+</tr>
+</thead>
+    <tbody>
+        <tr>
+
+           @foreach(var detail in Model)
+            {<tr>
+                <th scope="row">@detail.Id</th>
+                <th scope="row">@detail.Name</th>
+                <th scope="row">@detail.Phone</th>
+                <th scope="row">@detail.Timing</th>
+                <th scope="row">
+                    <a href="ViewMember/@detail.Id">Edit</a>
+                </th>
+            </tr>
+               
+                
+            }
+            
+        </tr>
+    </tbody>
+
+</table>

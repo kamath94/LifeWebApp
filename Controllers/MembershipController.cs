@@ -12,6 +12,7 @@ namespace lifedashboard.Controllers
         {
             db = Db;
         }
+
         [HttpGet]
         public IActionResult MemberShip()
         {
@@ -49,12 +50,12 @@ namespace lifedashboard.Controllers
                 };
                 await db.MemberDetails.AddAsync(MembeDetails);
                 await  db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("ListMember", "ListMember");
             }
             catch (Exception ex)
             {
                 ViewBag.ErrorInfo = ex.Message;
-                return RedirectToAction("Index");
+                return View();
             }
             
 

@@ -13,16 +13,17 @@ namespace lifedashboard.Models
         [Required]
         public string? Name { get; set; }
 
-        [Required]
+        //[Required(ErrorMessage = "Please enter Phone Number")]
+        [StringLength(11, MinimumLength =9)]
         public string? Phone { get; set; }
 
-        [Required]
-        public string? FeeAmount { get; set; }
+        [Required(ErrorMessage = "Please enter Fee Amount")]
+        public int? FeeAmount { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter Date Of Payment")]
         public DateTime? DateOfPayment { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter Fee Type")]
         public string? FeeType { get; set; }
 
         public string? Instructors { get; set; }

@@ -7,16 +7,13 @@ namespace lifedashboard.Models
         [Key]
         public Guid Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please enter Phone Number")]
         public string? Phone { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter Attendance Date")]
         public DateTime? AttendDate { get; set; }
-        [Required]
         public string? Month { get; set;}
-
         public DateTime? CreateDate { get; set; }
-
-       public DateTime? LastModifiedDate { get; set;}
+        public DateTime? LastModifiedDate { get; set;}
 
     }
 }

@@ -1,18 +1,23 @@
-﻿@model MembeDetails
+﻿@model ViewDetails
 @{
-    ViewData["Title"] = "Registration Page";
+    ViewData["Title"] = "Member Details";
 }
 <h1>@ViewData["Title"]</h1>
-<form class="container-fluid" method="post">
+
+<form class="container-fluid" method="post" action="ViewMember">
     <fieldset asp-validation-for="ModelOnly">
-                    
+
+        <div class="form-group">
+            <label class="form-label mt-4">Id</label>
+            <input type="text" class="form-control" id="Id" asp-for="Id" readonly>
+        </div>
         <div class="form-group">
             <label class="form-label mt-4">Name</label>
-            <input type="text" class="form-control" id="InputName" placeholder="Enter Name" asp-for="Name">
+            <input type="text" class="form-control" id="InputName"  asp-for="Name">
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Age</label>
-            <input type="number" class="form-control" id="InputAge" placeholder="Enter Age" asp-for="Age">
+            <input type="number" class="form-control" id="InputAge"  asp-for="Age">
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Date Of Birth</label>
@@ -47,7 +52,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" asp-for="Email"
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  asp-for="Email"
                    data-val-required="The Email field is required."
                    data-val-email="The Email field is not a valid email address."
                    data-val="true" />
@@ -62,7 +67,7 @@
         </div>
         <div class="form-group">
             <label class="form-label mt-4">Date Of Joining</label>
-            <input type="date" class="form-control" id="InputDateOfBirth" asp-for="JoiningDate"/>
+            <input type="date" class="form-control" id="InputDateOfBirth" asp-for="JoiningDate" readonly />
         </div>
         
         <div class="form-group">
@@ -108,8 +113,10 @@
                 </div>
 
         <div class ="form-label mt-4">
-            <button type="submit" class="btn btn-outline-primary ">Submit</button>
+            <button type="submit" class="btn btn-outline-primary">Save</button>
+        
          </div>
        
     </fieldset>
 </form>
+
