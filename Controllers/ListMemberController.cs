@@ -93,5 +93,19 @@ namespace lifedashboard.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+
+        public async Task<IActionResult> DeleteMember(ViewDetails details)
+        {
+            var memberdetail = await dB.MemberDetails.FindAsync(details.Id);
+            if(memberdetail!=null)
+            {
+                dB.MemberDetails.Remove(memberdetail);
+                await dB.SaveChangesAsync();
+                return RedirectToAction("ListMember", "ListMember");
+            }
+            else { return RedirectToAction("ListMember", "ListMember"); } 
+        }
     }
 }

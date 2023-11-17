@@ -7,9 +7,10 @@ namespace lifedashboard.Models
         [Key]
         public Guid Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter Phone Number")]
+        [StringLength(11, MinimumLength = 9)]
+        [Required]
         public string? Phone { get; set; }
-        [Required(ErrorMessage = "Please enter Attendance Date")]
+        [Required]
         public DateTime? AttendDate { get; set; }
         public string? Month { get; set;}
         public DateTime? CreateDate { get; set; }

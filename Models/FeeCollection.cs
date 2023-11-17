@@ -13,8 +13,8 @@ namespace lifedashboard.Models
         [Required]
         public string? Name { get; set; }
 
-        //[Required(ErrorMessage = "Please enter Phone Number")]
         [StringLength(11, MinimumLength =9)]
+        [Required(ErrorMessage = "Please enter Phone Number")]
         public string? Phone { get; set; }
 
         [Required(ErrorMessage = "Please enter Fee Amount")]

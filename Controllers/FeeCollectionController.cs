@@ -1,6 +1,8 @@
 ﻿using lifedashboard.Data;
 using lifedashboard.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using NuGet.Packaging.Signing;
 
 namespace lifedashboard.Controllers
 {
@@ -23,13 +25,16 @@ namespace lifedashboard.Controllers
         [HttpPost]
         public async Task <IActionResult> FeeCollection(FeeCollection collection)
         {
+          //Issue // var memberdetail = await dB.MemberDetails.FindAsync(collection.Phone);
+        
+
             try
             {
                 FeeCollection feeCollection = new FeeCollection()
                 {
                     Id = Guid.NewGuid(),
-                    MemberId = 404,
-                    Name = "404",
+                    MemberId = 404,// int.Parse(memberdetail.Id.ToString()),
+                    Name = "404",//memberdetail.Name,
                     Phone = collection.Phone,
                     FeeType = collection.FeeType,
                     FeeAmount = collection.FeeAmount,

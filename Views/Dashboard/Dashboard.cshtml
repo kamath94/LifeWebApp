@@ -1,0 +1,25 @@
+﻿@model Dashboard 
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<h1>@ViewData["Title"]</h1>
+<br>
+<div class="container-fluid" action="Dashboard" method="post">
+    <div class="container-fluid ">
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Total Members</div>
+            <div class="card-body">
+                <input class="card-text" type="text" asp-for="MemberCount">
+            </div>
+        </div>
+   
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                <div class="card-header">Total Revenue</div>
+                <div class="card-body">
+                <input class="card-text" type="text" asp-for="revenueYear">
+                </div>
+            </div>
+        </div>
+</div>
+
+</div>

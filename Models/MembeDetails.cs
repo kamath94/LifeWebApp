@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
 
 namespace lifedashboard.Models
 {
@@ -24,9 +25,11 @@ namespace lifedashboard.Models
         public string? FullAddress { get; set; }
 
         [Required]
+        [StringLength(11, MinimumLength = 9)]
         public string? Phone { get; set; }
 
         [Required]
+
         public string? Email { get; set; }
 
         public string? EmergencyNumber { get; set; }
@@ -60,5 +63,7 @@ namespace lifedashboard.Models
         public DateTime? CreateDate { get; set; }
 
         public DateTime? LastModifiedDate { get; set; }
+
+
     }
 }
