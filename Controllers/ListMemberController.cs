@@ -30,7 +30,7 @@ namespace lifedashboard.Controllers
             {
                 var memberdetail = new ViewDetails()
                 {
-                    Id = singleMember.Id,
+                    Id = Guid.NewGuid(),
                     Name = singleMember.Name,
                     Age = singleMember.Age,
                     Dob = singleMember.Dob,

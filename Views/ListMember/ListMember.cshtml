@@ -17,20 +17,19 @@
         <tr>
 
            @foreach(var detail in Model)
-            {<tr>
+            {
+                <tr>
                 <th scope="row">@detail.Id</th>
                 <th scope="row">@detail.Name</th>
                 <th scope="row">@detail.Phone</th>
                 <th scope="row">@detail.Timing</th>
-                <th scope="row">
-                    <a href="ViewMember/@detail.Id">Edit</a>
-                </th>
-            </tr>
+                <th scope="row"><a href="ViewMember/@detail.Id">Edit </a> </th>
+                </tr>
                
                 
-            }
+           }
             
-        </tr>
+       </tr>
     </tbody>
 
 </table>

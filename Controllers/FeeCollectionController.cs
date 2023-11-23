@@ -2,6 +2,7 @@
 using lifedashboard.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using NuGet.Packaging.Signing;
 
 namespace lifedashboard.Controllers
