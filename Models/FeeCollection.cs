@@ -8,8 +8,8 @@ namespace lifedashboard.Models
         [Key]
         public Guid Id { get; set; }
 
-        [Required]
-        public int MemberId { get; set; }
+        //[Required]
+        //public int MemberId { get; set; }
 
         [Required]
         public string? Name { get; set; }

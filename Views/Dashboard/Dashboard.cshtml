@@ -1,25 +1,52 @@
 ﻿@model Dashboard 
 @{
     ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h1>@ViewData["Title"]</h1>
 <br>
-<div class="container-fluid" action="Dashboard" method="post">
-    <div class="container-fluid ">
-        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-            <div class="card-header">Total Members</div>
-            <div class="card-body">
-                <input class="card-text" type="text" asp-for="MemberCount">
-            </div>
-        </div>
-   
-            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
-                <div class="card-header">Total Revenue</div>
-                <div class="card-body">
-                <input class="card-text" type="text" asp-for="revenueYear">
-                </div>
-            </div>
-        </div>
-</div>
+<table class="table table-hover" method="post" action="Dashboard">
+    <thead>
+        <tr>
+            <th scope="col">Matrix</th>
+            <th scope="col">Values</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <tr>
+            <th scope="row">Total number of members: </th>
+            <td scope="row">
+                <input type="text" class="form-control" asp-for="MemberCount" readonly>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Total revenue for the current month: </th>
+            <td scope="row">
+                <input type="text" class="form-control" asp-for="revenueCurentMonth" readonly>
+            </td>
+        </tr>
 
-</div>
+        <tr>
+            <th scope="row">Total revenue for the current year: </th>
+            <td scope="row">
+                <input type="text" class="form-control" asp-for="revenueYear" readonly>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">Total member presnt today </th>
+            <td scope="row">
+                <input type="text" class="form-control" asp-for="memberPresentDay" readonly>
+            </td>
+        </tr>
+
+         <tr>
+            <th scope="row">Total member presnt for the month of:  </th>
+            <td scope="row">
+               @* <input type="text" class="form-control" asp-for=" " readonly>*@
+            </td>
+        </tr>
+       
+    </tbody>
+</table>

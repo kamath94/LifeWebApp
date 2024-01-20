@@ -8,6 +8,7 @@ namespace lifedashboard.Models
         public Guid Id { get; set; }
 
         [StringLength(11, MinimumLength = 9)]
+
         [Required]
         public string? Phone { get; set; }
         [Required]

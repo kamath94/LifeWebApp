@@ -1,8 +1,13 @@
 ﻿@model PresentLog
 @{
     ViewData["Title"] = "Attendance";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
 <h1>@ViewData["Title"]</h1>
+
+
 
 <form class="container-fluid" method="post" asp-validation-summary="ModelOnly">
 
@@ -16,12 +21,21 @@
             <label class="form-label mt-4">Date Of Attendance</label>
             <input type="date" class="form-control" id="DateOfAttendancet" asp-for="AttendDate" />
             <span asp-validation-for="AttendDate" class="alert-danger"></span>
-
         </div>
+
 
         <div class="form-label mt-4">
-            <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" value="submit" onclick="alert" class="btn btn-primary">Submit</button>
         </div>
+    <div class="form-group">
+        @Html.Raw(@ViewBag.Alert)
+    </div>
 </form>
+@section Scripts {
 
-    
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+ }
+
+

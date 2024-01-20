@@ -6,8 +6,9 @@
         public int revenueMonth { get; set; }
 
         public int revenueYear { get; set; }
+        public int revenueCurentMonth { get; set; }
 
-        public int memberPresentDay { get;}
+        public int memberPresentDay { get; set; }
 
         public int memberPresentMonth { get; }
 

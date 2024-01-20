@@ -11,6 +11,7 @@ namespace lifedashboard.Models
        
         [Required]
         public string? PhoneNumber { get; set; }
+
         public string? DietPlan { get; set; }
         public string? WorkoutPlan { get; set; }
 

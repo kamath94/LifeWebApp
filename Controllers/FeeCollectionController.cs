@@ -1,9 +1,6 @@
 ﻿using lifedashboard.Data;
 using lifedashboard.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using NuGet.Packaging.Signing;
 
 namespace lifedashboard.Controllers
 {
@@ -26,16 +23,17 @@ namespace lifedashboard.Controllers
         [HttpPost]
         public async Task <IActionResult> FeeCollection(FeeCollection collection)
         {
-          //Issue // var memberdetail = await dB.MemberDetails.FindAsync(collection.Phone);
-        
+            //Issue // var memberdetail = await dB.MemberDetails.FindAsync(collection.Phone);
 
+            IEnumerable <string>  name = from i in dB.MemberDetails where i.Phone == collection.Phone select i.Name;
+            IEnumerable <Guid> id = from i in dB.MemberDetails where i.Phone == collection.Phone select i.Id;
             try
             {
                 FeeCollection feeCollection = new FeeCollection()
                 {
                     Id = Guid.NewGuid(),
-                    MemberId = 404,// int.Parse(memberdetail.Id.ToString()),
-                    Name = "404",//memberdetail.Name,
+                    //MemberId =int.Parse(id.First()),
+                    Name = name.First(),
                     Phone = collection.Phone,
                     FeeType = collection.FeeType,
                     FeeAmount = collection.FeeAmount,
@@ -46,14 +44,19 @@ namespace lifedashboard.Controllers
 
 
                 };
+
+              
+
+
+
                 await dB.FeeCollection.AddRangeAsync(feeCollection);
                 await dB.SaveChangesAsync();
-                return View("FeeCollection");
+                return RedirectToAction("Index", "Home");
             }
             catch (Exception ex)
             {
                 ViewBag.Error = ex;
-                return View("FeeCollection");
+                return RedirectToAction("Index", "Home");
             }
            
         }

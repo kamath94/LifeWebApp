@@ -1,12 +1,13 @@
 ﻿@model IEnumerable<AddPlans>
 @{
     ViewData["Title"] = "Search Diet/Workout plans";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h1>@ViewData["Title"]</h1>
 <br></br>
 
 <input type="button" value=" Add Plans"
-       style="position: fixed;top: 80px;right: 20px;"
+       style="position:absolute;top: 80px;right: 20px;"
        onclick="@("window.location.href='" + @Url.Action("AddPlans", "AddPlans") + "'");" />
 
 <form asp-controller="SearchPlans" asp-action="SearchPlans" method="get">
@@ -37,9 +38,9 @@
                 <th scope="row">@detail.Name</th>
                 <th scope="row">@detail.DietPlan</th>
                 <th scope="row">@detail.WorkoutPlan</th>
-                    <th scope="row">@detail.CreateDate</th>
-                    <th scope="row">@detail.LastModifiedDate</th>
-                    @*  <th scope="row"><a href="ViewMember/@detail.Id">Edit </a> </th>*@
+                <th scope="row">@detail.CreateDate</th>
+                <th scope="row">@detail.LastModifiedDate</th>
+
             </tr>
 
 
