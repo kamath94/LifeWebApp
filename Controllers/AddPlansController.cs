@@ -1,6 +1,7 @@
 ﻿using lifedashboard.Data;
 using lifedashboard.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace lifedashboard.Controllers
 {
@@ -21,24 +22,34 @@ namespace lifedashboard.Controllers
         // GET: AddPlansController/Create
         [HttpPost]
         public async Task<ActionResult> AddPlans(AddPlans plans)
-
         {
-            AddPlans newPlan = new AddPlans()
             {
-                Id = Guid.NewGuid(),
-                PhoneNumber = plans.PhoneNumber,
-                Name = "Name", //plans.Name,
-                DietPlan = plans.DietPlan,
-                WorkoutPlan = plans.WorkoutPlan,
-                CreateDate= DateTime.Now,
-                LastModifiedDate= DateTime.Now
-            };
-            await dB.AddPlans.AddRangeAsync(newPlan);
-            await dB.SaveChangesAsync();
-           
-            return View();
-        }
+              
+                    AddPlans newPlan = new AddPlans()
+                    {
+                        Id = Guid.NewGuid(),
+                        PhoneNumber = plans.PhoneNumber,
+                        Name = "Name", //plans.Name,
+                        DietPlan = plans.DietPlan,
+                        WorkoutPlan = plans.WorkoutPlan,
+                        CreateDate = DateTime.Now,
+                        LastModifiedDate = DateTime.Now
+                    };
+                var checkPhone = await dB.MemberDetails.FirstOrDefaultAsync(x => x.Phone == plans.PhoneNumber);
+                if (checkPhone != null)
+                {
+                    await dB.AddPlans.AddRangeAsync(newPlan);
+                    await dB.SaveChangesAsync();
+                    return View();
+                }
+                else
+                {
+                    Problem(@"Member not found");
 
+                }
+                return View();
+            }
+        }
         // POST: AddPlansController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]

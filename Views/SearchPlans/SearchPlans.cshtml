@@ -10,7 +10,7 @@
        style="position:absolute;top: 80px;right: 20px;"
        onclick="@("window.location.href='" + @Url.Action("AddPlans", "AddPlans") + "'");" />
 
-<form asp-controller="SearchPlans" asp-action="SearchPlans" method="get">
+<form asp-controller="SearchPlans" asp-action="SearchPlans" method="get" asp-validation-summary="All">
     <p>
         Enter the member name to edit the Diet/Workout plans:
         <input type="text" name="SearchString" />

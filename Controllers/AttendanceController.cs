@@ -1,4 +1,5 @@
-﻿using lifedashboard.Data;
+﻿using Abp.Web.Mvc.Alerts;
+using lifedashboard.Data;
 using lifedashboard.Enums;
 using lifedashboard.Models;
 using lifedashboard.Services;
@@ -41,7 +42,8 @@ namespace lifedashboard.Controllers
             }
             else
             {
-             ViewBag.Alert= CommonServices.ShowAlert(Alerts.Info ,"Member not found. Please contact the GYM administrator");
+       
+                ViewBag.Warning = CommonServices.ShowAlert(Alerts.Warning, "Member not found. Please contact the GYM administrator");
             }
 
             return RedirectToAction("Index","Home");
