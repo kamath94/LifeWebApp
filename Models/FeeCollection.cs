@@ -8,8 +8,8 @@ namespace lifedashboard.Models
         [Key]
         public Guid Id { get; set; }
 
-        //[Required]
-        //public int MemberId { get; set; }
+        [Required]
+        public int MemberId { get; set; }
 
         [Required]
         public string? Name { get; set; }
@@ -26,7 +26,7 @@ namespace lifedashboard.Models
 
         [Required(ErrorMessage = "Please enter Fee Type")]
         public string? FeeType { get; set; }
-
+        [Required(ErrorMessage = "Instructors name is required!!")]
         public string? Instructors { get; set; }
 
         public DateTime? CreateDate { get; set; }

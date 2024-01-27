@@ -33,22 +33,39 @@ namespace lifedashboard.Controllers
                 CreateDate= DateTime.Now,
                 LastModifiedDate= DateTime.Now
             };
+       
             var checkPhone = await dB.MemberDetails.FirstOrDefaultAsync(x => x.Phone == presentLog.Phone);
             if (checkPhone != null) 
             {
-                await dB.PresentLog.AddAsync(presentLog);
-                await dB.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-       
-                ViewBag.Warning = CommonServices.ShowAlert(Alerts.Warning, "Member not found. Please contact the GYM administrator");
-            }
+                try
+                {
+                    await dB.PresentLog.AddAsync(presentLog);
+                    await dB.SaveChangesAsync();
+                    ViewBag.Type = "Success";
+                    ViewBag.ErrorMessage ="Data is saved" ;
+                    //return RedirectToAction("Index", "Home");
+                    return View();
+                }
+                catch(Exception e)
+                {
+                    ViewBag.Type = "Error";
+                    ViewBag.ErrorMessage =e;
+                    return View();
+                }
+               
 
-            return RedirectToAction("Index","Home");
+            } 
+            else
+            { 
+                ViewBag.Type = "Warning";
+                ViewBag.ErrorMessage ="Member not found. Please contact the GYM administrator";
+              
+                return View();
+            }
 
            
+
+
         }
 
     }

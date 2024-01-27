@@ -1,6 +1,7 @@
 ﻿using lifedashboard.Data;
 using lifedashboard.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace lifedashboard.Controllers
 {
@@ -25,14 +26,16 @@ namespace lifedashboard.Controllers
         {
             //Issue // var memberdetail = await dB.MemberDetails.FindAsync(collection.Phone);
 
-            IEnumerable <string>  name = from i in dB.MemberDetails where i.Phone == collection.Phone select i.Name;
-            IEnumerable <Guid> id = from i in dB.MemberDetails where i.Phone == collection.Phone select i.Id;
-            try
+           
+
+                var checkPhone = await dB.MemberDetails.FirstOrDefaultAsync(x => x.Phone == collection.Phone);
+                if(checkPhone!=null)
             {
+                IEnumerable<string> name = from i in dB.MemberDetails where i.Phone == collection.Phone select i.Name;
                 FeeCollection feeCollection = new FeeCollection()
                 {
                     Id = Guid.NewGuid(),
-                    //MemberId =int.Parse(id.First()),
+                    MemberId = 1,
                     Name = name.First(),
                     Phone = collection.Phone,
                     FeeType = collection.FeeType,
@@ -44,21 +47,30 @@ namespace lifedashboard.Controllers
 
 
                 };
+                try
+                    {
+                        await dB.FeeCollection.AddRangeAsync(feeCollection);
+                        await dB.SaveChangesAsync();
+                        ViewBag.Type = "Success";
+                        ViewBag.ErrorMessage = "Data is saved";
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Type = "Error";
+                        ViewBag.ErrorMessage = ex;
 
-              
+                    }
 
+                }
+                else
+                {
+                    ViewBag.Type = "Warning";
+                    ViewBag.ErrorMessage = "Member not found. Please contact the GYM administrator";
+                   
+                }
+                                
+               return View();
 
-
-                await dB.FeeCollection.AddRangeAsync(feeCollection);
-                await dB.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
-            }
-            catch (Exception ex)
-            {
-                ViewBag.Error = ex;
-                return RedirectToAction("Index", "Home");
-            }
-           
         }
     }
 }

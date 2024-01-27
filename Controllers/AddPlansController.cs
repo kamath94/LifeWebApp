@@ -40,11 +40,15 @@ namespace lifedashboard.Controllers
                 {
                     await dB.AddPlans.AddRangeAsync(newPlan);
                     await dB.SaveChangesAsync();
+                    ViewBag.Type = "Success";
+                    ViewBag.ErrorMessage = "Data is saved";
                     return View();
+
                 }
                 else
                 {
-                    Problem(@"Member not found");
+                    ViewBag.Type = "Warning";
+                    ViewBag.ErrorMessage = "Member not found. Please contact the GYM administrator";
 
                 }
                 return View();

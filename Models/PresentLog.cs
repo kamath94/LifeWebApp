@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations;
 
 namespace lifedashboard.Models
 {
@@ -11,6 +12,9 @@ namespace lifedashboard.Models
 
         [Required]
         public string? Phone { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required]
         public DateTime? AttendDate { get; set; }
         public string? Month { get; set;}

@@ -49,16 +49,18 @@ namespace lifedashboard.Controllers
                     LastModifiedDate = DateTime.Now
                 };
                 await db.MemberDetails.AddAsync(MembeDetails);
-                await  db.SaveChangesAsync();
-                return RedirectToAction("ListMember", "ListMember");
+                await  db.SaveChangesAsync(); ViewBag.Type = "Success";
+                ViewBag.ErrorMessage = "Data is saved";
+               
+
             }
             catch (Exception ex)
             {
-                ViewBag.ErrorInfo = ex.Message;
-                return View();
+                ViewBag.Type = "Error";
+                ViewBag.ErrorMessage = ex;
             }
             
-
+            return View();
             
         }
     }
