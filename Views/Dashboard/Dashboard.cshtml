@@ -17,34 +17,49 @@
         <tr>
             <th scope="row">Total number of members: </th>
             <td scope="row">
-                <input type="text" class="form-control" asp-for="MemberCount" readonly>
+                <input type="text" class="form-control" asp-for="TotalMember" readonly >
             </td>
         </tr>
-        <tr>
-            <th scope="row">Total revenue for the current month: </th>
-            <td scope="row">
-                <input type="text" class="form-control" asp-for="revenueCurentMonth" readonly>
-            </td>
-        </tr>
-
         <tr>
             <th scope="row">Total revenue for the current year: </th>
             <td scope="row">
-                <input type="text" class="form-control" asp-for="revenueYear" readonly>
+                <input type="text" class="form-control" asp-for="TotalRevenue" readonly>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Total revenue for the current Year: </th>
+            <td scope="row">
+                <input type="text" class="form-control" asp-for="RevenueCurrentYear" readonly>
             </td>
         </tr>
 
         <tr>
-            <th scope="row">Total member presnt today </th>
+            <th scope="row">Total revenue for the current Month: </th>
             <td scope="row">
-                <input type="text" class="form-control" asp-for="memberPresentDay" readonly>
+                <input type="text" class="form-control" asp-for="RevenueCurrentMonth" readonly>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">Total member Current Month </th>
+            <td scope="row">
+                <input type="text" class="form-control" asp-for="MemberVisitedCurrentMonth" readonly>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            <th scope="row">Total member Today </th>
+            <td scope="row">
+                <input type="text" class="form-control" asp-for="MemberVisitedToday" readonly>
             </td>
         </tr>
 
          <tr>
-            <th scope="row">Total member presnt for the month of:  </th>
+            <th scope="row">New Addmission for the month </th>
             <td scope="row">
-               @* <input type="text" class="form-control" asp-for=" " readonly>*@
+                <input type="text" class="form-control" asp-for="MemberVisitedToday" readonly>
             </td>
         </tr>
        

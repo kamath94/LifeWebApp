@@ -2,15 +2,12 @@
 {
     public class Dashboard
     {
-        public int MemberCount { get; set; }
-        public int revenueMonth { get; set; }
-
-        public int revenueYear { get; set; }
-        public int revenueCurentMonth { get; set; }
-
-        public int memberPresentDay { get; set; }
-
-        public int memberPresentMonth { get; }
-
+        public string? TotalMember { get; set; }
+        public string? TotalRevenue { get; set; }
+        public string? RevenueCurrentYear { get; set; }
+        public string? RevenueCurrentMonth { get; set; }
+        public string? MemberVisitedCurrentMonth { get; set; }
+        public string? MemberVisitedToday { get; set; }
+        public string? NewAdmissionCurrentMonth { get; set; }
     }
 }

@@ -15,5 +15,6 @@ namespace lifedashboard.Data
         public DbSet<FeeCollection> FeeCollection { get; set; }
         public DbSet<PresentLog> PresentLog { get; set; }
         public DbSet<AddPlans> AddPlans { get; set; }
+
     }
 }
