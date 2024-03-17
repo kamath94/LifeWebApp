@@ -84,7 +84,7 @@ namespace lifedashboard.Controllers
                 memberdetail.Job = details.Job;
                 memberdetail.Qualification = details.Qualification;
                 memberdetail.IsActive = details.IsActive;
-                memberdetail.CreateDate = details.CreateDate;
+               // memberdetail.CreateDate = (DateTime)details.CreateDate;
                 memberdetail.LastModifiedDate = details.LastModifiedDate;
                 await dB.SaveChangesAsync();
 

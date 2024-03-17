@@ -18,7 +18,7 @@ namespace lifedashboard.Models
         [Required]
         public DateTime? AttendDate { get; set; }
         public string? Month { get; set;}
-        public DateTime? CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }
         public DateTime? LastModifiedDate { get; set;}
 
     }

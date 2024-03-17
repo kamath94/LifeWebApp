@@ -60,7 +60,7 @@ namespace lifedashboard.Models
 
         public int IsActive { get; set; }
 
-        public DateTime? CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         public DateTime? LastModifiedDate { get; set; }
 

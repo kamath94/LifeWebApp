@@ -29,7 +29,7 @@ namespace lifedashboard.Models
         [Required(ErrorMessage = "Instructors name is required!!")]
         public string? Instructors { get; set; }
 
-        public DateTime? CreateDate { get; set; }
+        public DateTime CreateDate { get; set; }
 
         public DateTime? LastModifiedDate { get; set; }
     }

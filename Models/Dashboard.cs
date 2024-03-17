@@ -9,5 +9,7 @@
         public string? MemberVisitedCurrentMonth { get; set; }
         public string? MemberVisitedToday { get; set; }
         public string? NewAdmissionCurrentMonth { get; set; }
+
+        public string? RevenueCurrentDay { get; set; }
     }
 }
