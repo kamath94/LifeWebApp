@@ -1,0 +1,56 @@
+﻿@model IEnumerable<AddPlans>
+@{
+    ViewData["Title"] = "Search Diet/Workout plans";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>@ViewData["Title"]</h1>
+<br></br>
+
+<input type="button" value=" Add Plans"
+       style="position:absolute;top: 80px;right: 20px;"
+       onclick="@("window.location.href='" + @Url.Action("AddPlans", "AddPlans") + "'");" />
+
+<form asp-controller="SearchPlans" asp-action="SearchPlans" method="get" asp-validation-summary="All">
+    <p>
+        Enter the member name to edit the Diet/Workout plans:
+        <input type="text" name="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Member Id</th>
+                <td scope="col">Member Name</td>
+                <td scope="col" width="300px">Diet</td>
+                <td scope="col"> Workout</td>
+                <td scope="col"> Start Date</td>
+                <td scope="col"> End Date</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+
+            @foreach (var detail in Model)
+            {
+            <tr>
+                <th scope="row">@detail.Id</th>
+                <th scope="row">@detail.Name</th>
+                <th scope="row">@detail.DietPlan</th>
+                <th scope="row">@detail.WorkoutPlan</th>
+                <th scope="row">@detail.CreateDate</th>
+                <th scope="row">@detail.LastModifiedDate</th>
+
+            </tr>
+
+
+            }
+
+        </tr>
+    </tbody>
+
+    </table>
+</form>
+
+<
+    

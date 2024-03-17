@@ -26,6 +26,29 @@ submit {
     transition-duration: 0.4s;
     cursor: pointer;
 }
+h1 {
+    line-height: .95;
+    color: #66fcf1;
+    font-weight: 900;
+    font-size: 150px;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+.center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 581px;
+    height: 50%;
+}
+
 
 a,
 a:link,
@@ -170,3 +193,5 @@ input[type="submit"]:hover {
   padding: 10px 0;
   border-radius: 0 0 4px 4px;
 }
+
+

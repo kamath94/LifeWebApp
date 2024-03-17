@@ -1,0 +1,65 @@
+﻿@model AddPlans
+@{
+    ViewData["Title"] = "Diet & Workout";
+}
+<h1>@ViewData["Title"]</h1>
+
+<form class="container-fluid" method="post" asp-action="AddPlans" asp-validation-summary="All">
+    <fieldset>
+        @if (ViewBag.ErrorMessage != null)
+        {
+            @switch (ViewBag.Type)
+            {
+                case "Success":
+                    <div class="alert alert-dismissible alert-success">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <strong>Success !</strong> @ViewBag.ErrorMessage
+                    </div>
+                    break;
+                case "Warning":
+                    <div class="alert alert-dismissible alert-warning">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <h4 class="alert-heading">Warning!</h4>
+                        <p class="mb-0"> @ViewBag.ErrorMessage</p>
+                    </div>
+                    break;
+                case "Error":
+                    <div class="alert alert-dismissible alert-danger">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <strong>Oh snap!</strong> @ViewBag.ErrorMessage
+                    </div>
+                    break;
+            }
+
+        }
+
+    <div class="form-group">
+        <label class="form-label mt-4">Phone Number </label>
+        <input type="text" class="form-control" id="InputPhone" asp-for="PhoneNumber" />
+        <span asp-validation-for="PhoneNumber" class="alert-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleTextarea" class="form-label mt-4">Diet Plan</label>
+        <textarea class="form-control" id="exampleTextarea" rows="3" asp-for="DietPlan"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleSelect2" class="form-label mt-4">Select workout plan</label>
+        <select class ="form-select" id="exampleSelect2" asp-for="WorkoutPlan">
+            <option value=" ">Select a plan</option>
+            <option value="A">Plan A</option>
+            <option value="B">Plan B</option>
+            <option value="C">Plan C</option>
+            <option value="D">Plan D</option>
+            <option value="E">Plan E</option>
+        </select>
+    </div>
+
+        <div class="form-label mt-4">
+            <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+        </div>
+        </fieldset>
+</form>
+
+    
