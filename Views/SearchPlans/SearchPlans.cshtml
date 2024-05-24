@@ -31,7 +31,7 @@
     <tbody>
         <tr>
 
-            @foreach (var detail in Model)
+            @foreach (var detail in Model.Take(50))
             {
             <tr>
                 <th scope="row">@detail.Id</th>
