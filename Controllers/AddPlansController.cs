@@ -42,7 +42,7 @@ namespace lifedashboard.Controllers
                     await dB.SaveChangesAsync();
                     ViewBag.Type = "Success";
                     ViewBag.ErrorMessage = "Data is saved";
-                    return View();
+                    return  RedirectToAction("AddPlans");
 
                 }
                 else

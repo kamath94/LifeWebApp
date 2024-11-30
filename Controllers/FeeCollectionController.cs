@@ -73,7 +73,7 @@ namespace lifedashboard.Controllers
                    
                 }
                                 
-               return View();
+               return RedirectToAction("FeeCollection");
 
         }
     }

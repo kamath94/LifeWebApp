@@ -16,3 +16,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+div {
+    word-wrap: break-word;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    height:50px;
+}
+
+th, td {
+    background-color: #96D4D4;
+}
